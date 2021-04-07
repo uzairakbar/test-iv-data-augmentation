@@ -23,7 +23,7 @@ class FCNN(nn.Module):
                  layers = 2):
         super(FCNN, self).__init__()
         hidden = [LinearBlock(in_channel, width)]
-        for layer in arange(layers - 1):
+        for layer in range(layers - 1):
             hidden += [LinearBlock(width, width)]
         self.hidden = nn.Sequential(*hidden)
         self.out = LinearBlock(width, out_channel, last=True)
