@@ -1,6 +1,6 @@
 import numpy as np
 from torch.utils.data import Dataset
-from ....data_augmentor import augment_data
+from data_augmentor import augment_data
 
 class dataset(Dataset):
     'SEM'
