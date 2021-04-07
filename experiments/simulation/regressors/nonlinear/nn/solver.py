@@ -1,5 +1,5 @@
 import torch
-from functions import iv_loss
+from .functions import iv_loss
 
 ARGS = {"epochs" : 150,
         "device" : "cpu",
