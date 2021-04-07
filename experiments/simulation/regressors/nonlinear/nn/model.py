@@ -34,6 +34,7 @@ class FCNN(nn.Module):
 
 from sklearn.base import RegressorMixin
 from sklearn.model_selection import train_test_split
+from misc import plot_loss_graphs
 
 class NN(RegressorMixin):
     def __init__(self, in_dim, out_dim, width = 5, layers = 2):
@@ -60,8 +61,9 @@ class NN(RegressorMixin):
                                                              test_loader = val_loader,
                                                              lamda = lamda, 
                                                              **kwargs)
-
-        plot_loss_graphs((self.train_logs, self.test_logs), kwargs);
+        
+        if kwargs["print_logs"]:
+            plot_loss_graphs((self.train_logs, self.test_logs), kwargs);
 
     def predict(self, X):
         y = self.model(X)
