@@ -39,7 +39,7 @@ from .misc import plot_loss_graphs
 from .data_utils import dataset
 
 class NN(RegressorMixin):
-    def __init__(self, in_dim, out_dim, width = 5, layers = 2):
+    def __init__(self, in_dim, out_dim, width = 5, layers = 2, **kwargs):
         super(NN, self).__init__()
         self.model = FCNN(in_dim, out_dim, width, layers)
         self.train_logs, self.test_logs = [], []
