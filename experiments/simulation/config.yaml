@@ -1,5 +1,5 @@
 samples : 1024
-trials : 50
+trials : 30
 SEM:
   dim : 10
   transform_h : True
