@@ -1,7 +1,7 @@
 samples : 2560
 trials : 50
-dim : 10
 SEM:
+  dim : 10
   transform_h : True
   additional_noise_y : True
   transform_x1_and_x2 : True
