@@ -1,6 +1,6 @@
 from sklearn.base import RegressorMixin
-from linear.iv_regression import IVR
-from nonlinear.nn.model import NN
+from .linear.iv_regression import IVR
+from .nonlinear.nn.model import NN
 
 class Regressor(RegressorMixin):
     def __init__(self, regression = "linear", **kwargs):
