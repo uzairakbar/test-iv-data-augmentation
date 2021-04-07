@@ -1,7 +1,9 @@
 import torch
 from .functions import iv_loss
 
-ARGS = {"epochs" : 150,
+ARGS = {"in_dim" : 10,
+        "out_dim" : 1,
+        "epochs" : 150,
         "device" : "cpu",
         "batch_size" : 256,
         "print_logs" : False,
