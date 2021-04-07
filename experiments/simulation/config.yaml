@@ -9,6 +9,8 @@ SEM:
   sem : "linear"
 regression : "linear"
 RegressionParams:
+  in_dim : 10
+  out_dim : 1
   epochs : 100
   device : "cpu"
   batch_size : 256
