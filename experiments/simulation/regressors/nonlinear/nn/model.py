@@ -47,8 +47,6 @@ class NN(RegressorMixin):
             kwargs = ARGS
         
         X_train, X_val, y_train, y_val = train_test_split( X, y, test_size = kwargs["train_val_split"] )
-        X_train, g_train = augment_data(X_train, augment_features)
-        X_val, g_val = augment_data(X_val, augment_features)
 
         train_dataset = dataset(X_train, y_train, augment_features)
         val_dataset = dataset(X_val, y_val, augment_features)
