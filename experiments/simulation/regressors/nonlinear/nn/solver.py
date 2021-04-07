@@ -3,6 +3,7 @@ import torch
 ARGS = {"epochs" : 150,
         "device" : "cpu",
         "batch_size" : 256,
+        "print_logs" : False,
         "log_interval" : 100,
         "train_val_split" : 0.2,
         "lr" : 0.0001,
@@ -33,7 +34,8 @@ def test(model,
             test_loss += loss.item()
     
     test_loss *= kwargs["batch_size"]/len(test_loader)
-    print('====> Test set loss: {:.4f}'.format(test_loss))
+    if kwargs["print_logs"]:
+        print('====> Test set loss: {:.4f}'.format(test_loss))
     return test_loss
 
 
@@ -72,8 +74,8 @@ def train_epoch(model,
                 epoch, batch_idx * len(x), len(train_loader.dataset),
                 100. * batch_idx / len(train_loader),
                 loss.item()))
-    
-    print('====> Epoch: {} Average loss: {:.4f}'.format(
+    if kwargs["print_logs"]:
+        print('====> Epoch: {} Average loss: {:.4f}'.format(
             epoch, train_loss * kwargs["batch_size"] / len(train_loader.dataset)))
 
     test_loss = test(model, epoch, test_loader, lamda, **kwargs)
