@@ -15,4 +15,7 @@ class IVR(LinearRegression):
             Z = ( np.eye( len(X) ) + gamma*PI )
         else:
             Z = PI
-        return super(IVR, self).fit( Z @ X_augmented, Z @ y)
+        if lamda:
+            return super(IVR, self).fit( Z @ X_augmented, Z @ y)
+        else:
+            return super(IVR, self).fit(X_augmented, y)
