@@ -72,7 +72,7 @@ def train_epoch(model,
         train_loss_log.append(loss.item())
         optimizer.step()
 
-        if batch_idx % kwargs["log_interval"] == 0:
+        if (batch_idx % kwargs["log_interval"] == 0) && kwargs["print_logs"]:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch, batch_idx * len(x), len(train_loader.dataset),
                 100. * batch_idx / len(train_loader),
