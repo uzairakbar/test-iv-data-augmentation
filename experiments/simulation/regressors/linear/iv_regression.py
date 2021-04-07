@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
-from ...data_augmentor import augment_data
+from data_augmentor import augment_data
 
 class IVR(LinearRegression):
     def __init__(self, **kwargs):
