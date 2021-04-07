@@ -12,6 +12,7 @@ RegressionParams:
   epochs : 100
   device : "cpu"
   batch_size : 256
+  print_logs : False
   log_interval : 100
   train_val_split : 0.0
   lr : 0.01
