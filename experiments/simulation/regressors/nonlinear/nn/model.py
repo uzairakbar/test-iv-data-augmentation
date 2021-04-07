@@ -34,7 +34,9 @@ class FCNN(nn.Module):
 
 from sklearn.base import RegressorMixin
 from sklearn.model_selection import train_test_split
+from torch.utils.data import DataLoader
 from misc import plot_loss_graphs
+from data_utils import dataset
 
 class NN(RegressorMixin):
     def __init__(self, in_dim, out_dim, width = 5, layers = 2):
