@@ -38,6 +38,19 @@ from torch.utils.data import DataLoader
 from .misc import plot_loss_graphs
 from .data_utils import dataset
 
+ARGS = {"in_dim" : 10,
+        "out_dim" : 1,
+        "epochs" : 150,
+        "device" : "cpu",
+        "batch_size" : 256,
+        "print_logs" : False,
+        "log_interval" : 100,
+        "train_val_split" : 0.2,
+        "lr" : 0.0001,
+        "width" : 5,
+        "layers" : 3,
+        "optimizer" : "adam"}
+
 class NN(RegressorMixin):
     def __init__(self, in_dim, out_dim, width = 5, layers = 2, **kwargs):
         super(NN, self).__init__()
