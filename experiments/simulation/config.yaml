@@ -1,4 +1,4 @@
-samples : 2560
+samples : 1024
 trials : 50
 SEM:
   dim : 10
