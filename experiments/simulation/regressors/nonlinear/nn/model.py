@@ -37,6 +37,7 @@ from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader
 from .misc import plot_loss_graphs
 from .data_utils import dataset
+from .solver import solver
 
 ARGS = {"in_dim" : 10,
         "out_dim" : 1,
