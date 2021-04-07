@@ -8,7 +8,7 @@ SEM:
   additional_noise_x1_and_x2 : True
   sem : "linear"
 regression : "linear"
-NN:
+RegressionParams:
   epochs : 100
   device : "cpu"
   batch_size : 256
