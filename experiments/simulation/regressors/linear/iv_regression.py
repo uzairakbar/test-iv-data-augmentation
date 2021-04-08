@@ -11,7 +11,7 @@ class IVR(LinearRegression):
         
         PI = g @ np.linalg.pinv(g)
         if lamda < 1.0:
-            gamma = np.sqrt(1/1-lamda) - 1.0
+            gamma = (1/1-lamda)**0.5 - 1.0
             Z = ( np.eye( len(X) ) + gamma*PI )
         else:
             Z = PI
