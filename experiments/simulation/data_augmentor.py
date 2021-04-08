@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 
-def augment_data(x, pert, U=1):
+def augment_data(x, pert, U=0.1):
     """
     Parameters
     ----------
