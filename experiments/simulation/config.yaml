@@ -11,13 +11,13 @@ regression : "linear"
 RegressionParams:
   in_dim : 10
   out_dim : 1
-  epochs : 100
+  epochs : 50
   device : "cpu"
   batch_size : 256
   print_logs : False
   log_interval : 100
   train_val_split : 0.0
-  lr : 0.01
-  width : 5
-  layers : 2
+  lr : 0.001
+  width : 10
+  layers : 3
   optimizer : "adam"
