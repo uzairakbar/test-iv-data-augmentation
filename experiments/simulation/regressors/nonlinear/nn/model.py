@@ -62,7 +62,10 @@ class NN(RegressorMixin):
         if not kwargs:
             kwargs = ARGS
         
-        X_train, X_val, y_train, y_val = train_test_split( X, y, test_size = kwargs["train_val_split"] )
+        if kwargs["train_val_split"]:
+            X_train, X_val, y_train, y_val = train_test_split( X, y, test_size = kwargs["train_val_split"] )
+        else:
+            X_train, X_val, y_train, y_val = X, X, y, y
 
         train_dataset = dataset(X_train, y_train, augment_features)
         val_dataset = dataset(X_val, y_val, augment_features)
