@@ -11,7 +11,7 @@ regression : "linear"
 RegressionParams:
   in_dim : 10
   out_dim : 1
-  epochs : 50
+  epochs : 300
   device : "cpu"
   batch_size : 256
   print_logs : False
