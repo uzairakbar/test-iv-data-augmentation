@@ -78,10 +78,11 @@ class NN(RegressorMixin):
                                                              test_loader = val_loader,
                                                              lamda = lamda, 
                                                              **kwargs)
+        self.model.eval()
         
         if kwargs["print_logs"]:
             plot_loss_graphs((self.train_logs, self.test_logs), kwargs);
 
     def predict(self, X):
-        y = self.model(X)
+        y = self.model(torch.tensor(X)).detach().numpy()
         return y
