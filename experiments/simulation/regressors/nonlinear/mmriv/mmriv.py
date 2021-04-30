@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.base import RegressorMixin
 from sklearn.metrics.pairwise import rbf_kernel
+from data_augmentor import augment_data
 
 class MMRIV(RegressorMixin):
     def __init__(self, alpha = 1.0, kernel = "rbf", gamma = None, **kwargs):
