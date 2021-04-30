@@ -12,6 +12,8 @@ class Regressor(RegressorMixin):
         elif  self.regression == "nn":
             self.regressor = NN(**kwargs)
         elif  self.regression == "mmriv":
+            alpha_range = loguniform(1e-4, 10)
+            gamma_range = loguniform(1e-4, 10)
             parameters = {'kernel':['rbf'],
               'alpha': alpha_range.rvs(random_state=seed, size=5),
               'gamma': gamma_range.rvs(random_state=seed, size=5)}
