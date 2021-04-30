@@ -4,6 +4,8 @@ from .nonlinear.nn.model import NN
 from .nonlinear.mmriv.mmriv import MMRIV
 from sklearn.utils.fixes import loguniform
 
+seed = 42
+
 class Regressor(RegressorMixin):
     def __init__(self, regression = "linear", **kwargs):
         super(Regressor, self).__init__()
