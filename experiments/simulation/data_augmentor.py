@@ -22,7 +22,7 @@ def augment_data(x, pert, U=0.1, model = "linear"):
         g = noise_x
     elif model == "nonlinear":
 #         g = np.random.choice([-1.0, 1.0], p=[0.5, 0.5])
-#         if z > 0:
+#         if g > 0:
 #             x *= U
         g = np.ones_like(x)
         g[:, :x.shape[1]//2] = torch.FloatTensor(x.shape[0], x.shape[1]//2).uniform_(0, U).numpy()
