@@ -20,7 +20,7 @@ def augment_data(x, pert, U=0.1, model = "linear"):
         noise_x[:, feature_index_no_noise] = 0.0
         x += noise_x
         g = noise_x
-    elif if model == "nonlinear":
+    elif model == "nonlinear":
 #         g = np.random.choice([-1.0, 1.0], p=[0.5, 0.5])
 #         if z > 0:
 #             x *= U
