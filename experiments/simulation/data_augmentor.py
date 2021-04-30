@@ -25,7 +25,7 @@ def augment_data(x, pert, U=0.1, model = "linear"):
 #         if z > 0:
 #             x *= U
         g = np.ones_like(x)
-        g[:, :x.shape[1]//2] = torch.FloatTensor(x.shape[0], x.shape[1]//2).uniform_(-U, U).numpy()
+        g[:, :x.shape[1]//2] = torch.FloatTensor(x.shape[0], x.shape[1]//2).uniform_(0, U).numpy()
         feature_index_no_noise = np.random.choice(x.shape[1]//2, x.shape[1]//2 - pert, replace=False)
         g[:, feature_index_no_noise] = 1.0
         x = x*g
