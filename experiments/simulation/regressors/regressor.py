@@ -2,6 +2,7 @@ from sklearn.base import RegressorMixin
 from .linear.iv_regression import IVR
 from .nonlinear.nn.model import NN
 from .nonlinear.mmriv.mmriv import MMRIV
+from sklearn.utils.fixes import loguniform
 
 class Regressor(RegressorMixin):
     def __init__(self, regression = "linear", **kwargs):
