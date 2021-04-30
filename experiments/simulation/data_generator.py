@@ -101,7 +101,7 @@ class SEM(object):
             if self.sem == "linear":
                 y = dox1 @ self.Wx1y + dox2 @ self.Wx2y + h @ self.Why + noise_y
             else:
-                y = dox2 @ self.Wx2y + torch.sigmoid(dox1 @ self.Wx1y) + h @ self.Why + noise_y
+                y = dox2 @ self.Wx2y + torch.tanh(dox1 @ self.Wx1y) + h @ self.Why + noise_y
             
 
         return torch.cat((x1, x2), dim=1).numpy(), y.sum(dim=1).numpy(), h.sum(dim=1).numpy()
