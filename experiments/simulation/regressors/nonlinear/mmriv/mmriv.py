@@ -11,7 +11,7 @@ class MMRIV(RegressorMixin):
         self.kernel = kernel
 
     def fit(self, X, y, augment_features = 0, lamda = 1.0, **kwargs):
-        X_augmented, Z = augment_data(X, augment_features)
+        X_augmented, Z = augment_data(X, augment_features, model = "nonlinear")
         self.X = X_augmented
 
         if self.gamma is None:
